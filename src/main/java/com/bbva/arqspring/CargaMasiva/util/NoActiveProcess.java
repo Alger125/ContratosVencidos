@@ -3,14 +3,20 @@ package com.bbva.arqspring.CargaMasiva.util;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.bbva.arqspring.App;
 import com.bbva.arqspring.dao.BaseDAO;
 import com.bbva.arqspring.util.NoActivo;
 
+
+
 @Service
 public class NoActiveProcess extends BaseDAO implements NoActivo{
+	
+	private static Logger LogJava = Logger.getLogger(App.class);
     
        @Value("${rutas.carga.masiva.result}")
         private String RUTARESULT;
@@ -28,7 +34,7 @@ public class NoActiveProcess extends BaseDAO implements NoActivo{
             dividendos.createNewFile();
             acciones.createNewFile();
         } catch (IOException e) {
-            System.out.println("Proceso no activo, error al ejecutar");
+            LogJava.debug("Proceso no activo, error al ejecutar");
         }
         
     }
@@ -36,7 +42,7 @@ public class NoActiveProcess extends BaseDAO implements NoActivo{
     public static void eliminarFichero(File fichero) {
         if (fichero.exists()) {
             fichero.delete();
-            System.out.println("El archivo " + fichero.getName() + " fue eliminado.");
+            LogJava.debug("El archivo " + fichero.getName() + " fue eliminado.");
         }
     }
 }
