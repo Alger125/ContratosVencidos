@@ -48,9 +48,9 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 			.append("ORDER BY 3, 1, 2 ")
 			.append(") PC")
 			.append("ORDER BY 3, 1, 2")
-			.append(" 	) S")
-			.append("	LEFT JOIN FDPACAHON HON ON S.NUM_CONTRATO = HON.PAC_NUM_CONTRATO AND HON.PAC_NUM_SUBFISO = S.SUB_CONTRATO")
-			.append("		WHERE  S.ESTATUS = 'VENCIDO' AND S.NUM_CONTRATO NOT IN (SELECT DISTINCT CB.CTB_CONTRATO FROM GDB2PR.CTOBLOQU CB WHERE S.NUM_CONTRATO = CB.CTB_CONTRATO AND S.SUB_CONTRATO = CB.CTB_SUB_CONTRATO) AND HON.PAC_CVE_ST_PACAHON <> 'EN TRAMITE DE EXTINCION'")
+			.append(") S ")
+			.append("LEFT JOIN FDPACAHON HON ON S.NUM_CONTRATO = HON.PAC_NUM_CONTRATO AND HON.PAC_NUM_SUBFISO = S.SUB_CONTRATO ")
+			.append("WHERE  S.ESTATUS = 'VENCIDO' AND S.NUM_CONTRATO NOT IN (SELECT DISTINCT CB.CTB_CONTRATO FROM GDB2PR.CTOBLOQU CB WHERE S.NUM_CONTRATO = CB.CTB_CONTRATO AND S.SUB_CONTRATO = CB.CTB_SUB_CONTRATO) AND HON.PAC_CVE_ST_PACAHON <> 'EN TRAMITE DE EXTINCION' ")
 			.append(")")
 			.append("INNER JOIN GDB2PR.BENEFICI ON BEN_NUM_CONTRATO = NUM_CONTRATO WHERE BEN_CVE_ST_BENEFIC = 'ACTIVO' AND BEN_E_MAIL LIKE '%@%' GROUP BY FECHA_VENCIMIENTO, CTO_CVE_TIPO_NEG, BEN_E_MAIL WITH UR");
 
@@ -64,7 +64,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 					ctoFideicomisario.setFechaVencimiento((java.sql.Date) query.get("FECHA_VENCIMIENTO"));
 					ctoFideicomisario.setCveTipoNegocio((String) query.get("CTO_CVE_TIPO_NEG"));
 
-					if(validarCorreo((String) query.get("BEN_E_MAIL"))== true){
+					if(validarCorreo((String) query.get("BEN_E_MAIL"))==true){
 						ctoFideicomisario.setCorreo((String) query.get("BEN_E_MAIL"));
 						formateado = String.format("%-300s", query.get("BEN_E_MAIL"));
 						ctoFideicomisario.setCorreo(formateado);
