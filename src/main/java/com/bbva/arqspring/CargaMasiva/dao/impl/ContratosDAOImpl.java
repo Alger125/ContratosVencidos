@@ -29,9 +29,9 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 			logger.info(":::-- Inicia QUERY getCtoFideicomisario --:::");
 
 			//'ZONA RESTRINGIDA'
-			sql.append("SELECT FECHA_VENCIMIENTO, CTO_CVE_TIPO_NEG, BEN_E_MAIL")
-			.append(" FROM")
-			.append(" 	(")
+			sql.append("SELECT FECHA_VENCIMIENTO, CTO_CVE_TIPO_NEG, BEN_E_MAIL ")
+			.append("FROM ")
+			.append("(")
 			.append("	SELECT FECHA_VENCIMIENTO, CTO_CVE_TIPO_NEG, NUM_CONTRATO, CTO_NOM_ACTIVIDAD")
 			.append("	FROM")
 			.append("		(")
