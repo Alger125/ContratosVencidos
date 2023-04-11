@@ -15,12 +15,11 @@ import com.bbva.arqspring.util.Config;
  */
 public class App {
 	public static void main(String[] args) {
-		System.err.println("INICIO");
 
 		Config.setNumberProcess(207);
 		Config.setNoActivo(NoActiveProcess.class);
 		ApplicationContext c = Config.obtenerContexto();
-		System.err.println("ACTIVO");
+
 		CatalogoContratosService catalogo = c.getBean(CatalogoContratosService.class);
 
 		try {
@@ -33,13 +32,13 @@ public class App {
 			System.err.println("Tiempo de ejecucion ====  " + segundos + " segundos ");
 			System.err.println("Tiempo de ejecucion ====  " + minutos + " minutos ");
 			System.err.println("FIN DE EJECUCION");
-			
+
 			System.exit(0);
 		} catch (Exception e) {
 			String messageOutPut = "Error al ejecutar proceso";
 			System.err.println("Error: " + messageOutPut);
 			System.exit(1);
 		}
-		
+
 	}
 }
