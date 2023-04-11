@@ -1,4 +1,4 @@
-package com.bbva.CargaMasiva.dao;
+package cargamasiva.dao;
 
 import java.io.IOException;
 import java.util.List;
