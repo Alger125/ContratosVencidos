@@ -15,7 +15,7 @@ import com.bbva.arqspring.util.Config;
  */
 public class App {
 	public static void main(String[] args) {
-		System.out.println("INICIO");
+		System.err.println("INICIO");
 
 		Config.setNumberProcess(207);
 		Config.setNoActivo(NoActiveProcess.class);
