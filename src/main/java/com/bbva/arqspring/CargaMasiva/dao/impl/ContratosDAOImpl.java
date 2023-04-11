@@ -19,12 +19,9 @@ import com.bbva.arqspring.dao.BaseDAO;
 @Repository
 public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 
-	private String BEN_E_MAIL;
-
 	public List<FideicomisarioDTO> getCtoFideicomisario() {
 		List<FideicomisarioDTO> result = new ArrayList<FideicomisarioDTO>();
 		String formateado;
-		
 		try {
 			StringBuilder sql = new StringBuilder();
 			Map<String, Object> params = new HashMap<String, Object>();
