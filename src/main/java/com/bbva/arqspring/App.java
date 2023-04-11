@@ -33,6 +33,7 @@ public class App {
 			System.out.println("Tiempo de ejecucion ====  " + segundos + " segundos ");
 			System.out.println("Tiempo de ejecucion ====  " + minutos + " minutos ");
 			System.out.println("FIN DE EJECUCION");
+			System.out.println("jkfhjdkhfjkdhfjkd");
 			System.exit(0);
 		} catch (Exception e) {
 			String messageOutPut = "Error al ejecutar proceso";
