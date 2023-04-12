@@ -10,11 +10,12 @@ import java.util.regex.Pattern;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.bbva.arqspring.CargaMasiva.dao.ContratosDAO;
 import com.bbva.arqspring.CargaMasiva.dto.FideicomisarioDTO;
 import com.bbva.arqspring.CargaMasiva.dto.FideicomitenteDTO;
 import com.bbva.arqspring.CargaMasiva.util.ConstantesBatch;
 import com.bbva.arqspring.dao.BaseDAO;
+
+import cargamasiva.dao.ContratosDAO;
 
 @Repository
 public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
@@ -139,7 +140,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 	
 	public boolean validarCorreo(String email) {
 
-        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
         Matcher mather = pattern.matcher(email.trim());
  
         if (mather.find() == true) {
