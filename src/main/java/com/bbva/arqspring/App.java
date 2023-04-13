@@ -16,7 +16,7 @@ import com.bbva.arqspring.util.Config;
  */
 public class App {
 	
-	private static Logger LogJava = Logger.getLogger(App.class);
+	private static Logger Java = Logger.getLogger(App.class);
 	
 	public static void main(String[] args) {
 		LogJava.debug("INICIO");
@@ -33,14 +33,14 @@ public class App {
 			long diferencia = fecha2.getTime() - fecha1.getTime();
 			long segundos = TimeUnit.MILLISECONDS.toSeconds(diferencia);
 			long minutos = TimeUnit.MILLISECONDS.toMinutes(diferencia);
-			LogJava.debug("Tiempo de ejecucion ====  " + segundos + " segundos ");
-			LogJava.debug("Tiempo de ejecucion ====  " + minutos + " minutos ");
-			LogJava.debug("FIN DE EJECUCION");
+			Java.info("Tiempo de ejecucion ====  " + segundos + " segundos ");
+			Java.info("Tiempo de ejecucion ====  " + minutos + " minutos ");
+			Java.info("FIN DE EJECUCION");
 
 			System.exit(0);
 		} catch (Exception e) {
 			String messageOutPut = "Error al ejecutar proceso";
-			LogJava.debug("Error: " + messageOutPut);
+			Java.info("Error: " + messageOutPut);
 			System.exit(1);
 		}
 
