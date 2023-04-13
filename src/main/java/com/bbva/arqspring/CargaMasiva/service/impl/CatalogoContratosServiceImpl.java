@@ -4,10 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.bbva.arqspring.CargaMasiva.service.CatalogoContratosService;
-import com.bbva.arqspring.CargaMasiva.service.ContratosService;
 import com.bbva.arqspring.dao.BaseDAO;
 import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
+
+import cargamasiva.service.CatalogoContratosService;
+import cargamasiva.service.ContratosService;
 
 @Service
 public class CatalogoContratosServiceImpl extends BaseDAO implements CatalogoContratosService {
