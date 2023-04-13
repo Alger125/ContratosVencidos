@@ -17,6 +17,7 @@ import com.bbva.arqspring.dao.BaseDAO;
 
 import cargamasiva.dao.ContratosDAO;
 
+
 @Repository
 public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 
