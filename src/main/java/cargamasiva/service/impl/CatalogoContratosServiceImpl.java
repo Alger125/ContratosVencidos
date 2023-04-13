@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.service.impl;
+package cargamasiva.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

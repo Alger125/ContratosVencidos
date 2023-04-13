@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.service.impl;
+package cargamasiva.service.impl;
 
 import java.io.File;
 import java.io.FileWriter;
