@@ -112,7 +112,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 					ctoFideicomitente.setFechaVencimiento((java.sql.Date) query.get("FECHA_VENCIMIENTO"));
 					ctoFideicomitente.setCveTipoNegocio((String) query.get("CTO_CVE_TIPO_NEG"));
 
-					if (validarCorreo((String) query.get("AFB_E_MAIL")) == true) {
+					if (validarCorreo((String) query.get("AFB_E_MAIL"))) {
 						ctoFideicomitente.setCorreo((String) query.get("AFB_E_MAIL"));
 						textoFormateado = String.format("%-300s", query.get("AFB_E_MAIL"));
 						ctoFideicomitente.setCorreo(textoFormateado);
