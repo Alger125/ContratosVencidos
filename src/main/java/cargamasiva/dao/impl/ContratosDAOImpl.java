@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.dao.impl;
+package cargamasiva.dao.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
