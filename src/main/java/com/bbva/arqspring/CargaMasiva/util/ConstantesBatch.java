@@ -1,7 +1,12 @@
 package com.bbva.arqspring.CargaMasiva.util;
 
+
 public class ConstantesBatch {
 
+	private ConstantesBatch() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	/** Constantes para consultas BD */
 	public static final String QUERY = "Ejecutando Query Batch:";
 	public static final String PARAM = "Parametros Batch:";
@@ -19,4 +24,5 @@ public class ConstantesBatch {
 	public static final String EXTENSION_TXT = "txt";
 
 	public static final String CADENA_VACIA = "";
+	
 }

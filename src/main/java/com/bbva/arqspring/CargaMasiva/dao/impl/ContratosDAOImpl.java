@@ -23,6 +23,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 	public List<FideicomisarioDTO> getCtoFideicomisario() {
 		List<FideicomisarioDTO> result = new ArrayList<FideicomisarioDTO>();
 		String formateado;
+		
 		try {
 			StringBuilder sql = new StringBuilder();
 			Map<String, Object> params = new HashMap<String, Object>();
@@ -64,7 +65,6 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 					FideicomisarioDTO ctoFideicomisario = new FideicomisarioDTO();
 					ctoFideicomisario.setFechaVencimiento((java.sql.Date) query.get("FECHA_VENCIMIENTO"));
 					ctoFideicomisario.setCveTipoNegocio((String) query.get("CTO_CVE_TIPO_NEG"));
-
 					if(validarCorreo((String) query.get("BEN_E_MAIL"))== true){
 						ctoFideicomisario.setCorreo((String) query.get("BEN_E_MAIL"));
 						formateado = String.format("%-300s", query.get("BEN_E_MAIL"));

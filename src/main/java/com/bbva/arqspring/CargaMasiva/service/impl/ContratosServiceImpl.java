@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bbva.arqspring.CargaMasiva.dao.ContratosDAO;
+import cargamasiva.dao.ContratosDAO;
+
+import com.bbva.arqspring.App;
 import com.bbva.arqspring.CargaMasiva.dto.FideicomisarioDTO;
 import com.bbva.arqspring.CargaMasiva.dto.FideicomitenteDTO;
 import com.bbva.arqspring.CargaMasiva.service.ContratosService;
@@ -20,6 +23,8 @@ import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
 
 @Service
 public class ContratosServiceImpl implements ContratosService {
+	
+	private static Logger LogJava = Logger.getLogger(ContratosServiceImpl.class);
 
 	@Autowired
 	ContratosDAO contratosDAO;
@@ -38,7 +43,7 @@ public class ContratosServiceImpl implements ContratosService {
 		DateFormat hourdateFormat = new SimpleDateFormat("yyyyMMdd");
 		String fechaActual = hourdateFormat.format(date);
 		File file = new File(ruta + File.separator + "MMFID_D01_" + fechaActual + "_GCVE_ECONTVENC.TXT");
-		int contador = 1;
+
 		try {
 			escribir = new FileWriter(file, false);
 			fideicomisarios = contratosDAO.getCtoFideicomisario();
@@ -47,7 +52,7 @@ public class ContratosServiceImpl implements ContratosService {
 			for (FideicomisarioDTO fideicomisario : fideicomisarios) {
 				escribir.write(fideicomisario.toString());
 				escribir.write(salto);
-				contador++;
+
 			}
 			for (FideicomitenteDTO fideicomitente : fideicomitentes) {
 				escribir.write(fideicomitente.toString());
@@ -55,7 +60,7 @@ public class ContratosServiceImpl implements ContratosService {
 			}
 			escribir.close();
 		} catch (ExcepcionAplicacion e) {
-			System.out.println("Error al escribir el archivo");
+			LogJava.info("Error al escribir el archivo");
 		} finally {
 			escribir.close();
 		}
