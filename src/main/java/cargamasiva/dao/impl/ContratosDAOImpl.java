@@ -51,7 +51,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 
 			logger.info(ConstantesBatch.QUERY + sql);
 			logger.info(ConstantesBatch.PARAM + params.toString());
-
+			
 			List<Map<String, Object>> queryMap = jdbcTemplate.queryForList(sql.toString(),
 					new MapSqlParameterSource(params));
 			if (null != queryMap && !queryMap.isEmpty()) {
