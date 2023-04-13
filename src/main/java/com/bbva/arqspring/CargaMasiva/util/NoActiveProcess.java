@@ -42,7 +42,7 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 			fichero.delete();
 			LogJava.debug("El archivo " + fichero.getName() + " fue eliminado.");
 		}
-		return false;
+		return True;
 	}
 
 }
