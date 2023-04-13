@@ -29,7 +29,15 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		if(admitivos.delete()) {
 			LogJava.debug("El archivo " + admitivos.getName() + " fue eliminado.");
 		}
+		if(dividendos.delete()) {
+			LogJava.debug("El archivo " + dividendos.getName() + " fue eliminado.");
 		}
+		if(acciones.delete()) {
+			LogJava.debug("El archivo " + acciones.getName() + " fue eliminado.");
+		}
+	}
+}
+
 	
 	/*
 	public static boolean eliminarFichero(File fichero) {
@@ -41,4 +49,4 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 	}
 	*/
 
-}
+
