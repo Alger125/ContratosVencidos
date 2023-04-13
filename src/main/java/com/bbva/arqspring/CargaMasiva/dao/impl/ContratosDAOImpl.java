@@ -149,4 +149,5 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
             return false;
         }
 	}
+
 }
