@@ -64,6 +64,6 @@ public class ContratosServiceImpl implements ContratosService {
 		} finally {
 			escribir.close();
 		}
-		return file.getAbsolutePath().toString();
+		return file.getAbsolutePath();
 	}
 }
