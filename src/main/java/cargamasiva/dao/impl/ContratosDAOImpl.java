@@ -126,6 +126,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 		return result;
 	}
 
+	
 	public boolean validarCorreo(String email) {
 
 		return Pattern.compile("^[_A-Za-z0-9-\\\\+]\"+\"[A-Za-z0-9-](\\\\.[A-Za-z]{2,})$").matcher(email).find();
