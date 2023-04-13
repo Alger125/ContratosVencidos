@@ -23,7 +23,7 @@ import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
 
 @Service
 public class ContratosServiceImpl implements ContratosService {
-	
+
 	private static Logger LogJava = Logger.getLogger(ContratosServiceImpl.class);
 
 	@Autowired
