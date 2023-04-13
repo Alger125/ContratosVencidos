@@ -17,13 +17,13 @@ public class CatalogoContratosServiceImpl extends BaseDAO implements CatalogoCon
 	private ContratosService contratosService;
 
 	@Value("${rutas.carga.masiva.result}")
-	private String RUTARESULT;
+	private String resultado;
 
 	public int inicio() throws ExcepcionAplicacion {
 		int exitCode = 0;
 
 		try {
-			contratosService.createFile(RUTARESULT);
+			contratosService.createFile(resultado);
 
 		} catch (Exception e) {
 			exitCode = 1;
