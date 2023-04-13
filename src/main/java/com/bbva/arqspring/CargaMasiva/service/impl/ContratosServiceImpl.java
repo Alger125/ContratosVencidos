@@ -14,10 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cargamasiva.dao.ContratosDAO;
+import cargamasiva.dto.FideicomisarioDTO;
+import cargamasiva.dto.FideicomitenteDTO;
 
 import com.bbva.arqspring.App;
-import com.bbva.arqspring.CargaMasiva.dto.FideicomisarioDTO;
-import com.bbva.arqspring.CargaMasiva.dto.FideicomitenteDTO;
 import com.bbva.arqspring.CargaMasiva.service.ContratosService;
 import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
 

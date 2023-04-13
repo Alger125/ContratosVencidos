@@ -10,12 +10,12 @@ import java.util.regex.Pattern;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import com.bbva.arqspring.CargaMasiva.dto.FideicomisarioDTO;
-import com.bbva.arqspring.CargaMasiva.dto.FideicomitenteDTO;
 import com.bbva.arqspring.CargaMasiva.util.ConstantesBatch;
 import com.bbva.arqspring.dao.BaseDAO;
 
 import cargamasiva.dao.ContratosDAO;
+import cargamasiva.dto.FideicomisarioDTO;
+import cargamasiva.dto.FideicomitenteDTO;
 
 @Repository
 public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {

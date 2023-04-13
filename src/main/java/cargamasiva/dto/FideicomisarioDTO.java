@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.dto;
+package cargamasiva.dto;
 
 import java.sql.Date;
 
