@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.eclipse.jdt.internal.compiler.apt.util.ArchiveFileObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -24,19 +25,13 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		File admitivos = new File(RUTARESULT + File.separator + "concilia_admitivos.txt");
 		File dividendos = new File(RUTARESULT + File.separator + "concilia_dividendos.txt");
 		File acciones = new File(RUTARESULT + File.separator + "concilia_acciones.txt");
-		eliminarFichero(admitivos);
-		eliminarFichero(dividendos);
-		eliminarFichero(acciones);
-		try {
-			admitivos.createNewFile();
-			dividendos.createNewFile();
-			acciones.createNewFile();
-		} catch (IOException e) {
-			LogJava.debug("Proceso no activo, error al ejecutar");
+		
+		if(admitivos.delete()) {
+			LogJava.debug("El archivo " + admitivos.getName() + " fue eliminado.");
 		}
-
-	}
-
+		}
+	
+	/*
 	public static boolean eliminarFichero(File fichero) {
 		if (fichero.exists()) {
 			fichero.delete();
@@ -44,5 +39,6 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		}
 		return false;
 	}
+	*/
 
 }
