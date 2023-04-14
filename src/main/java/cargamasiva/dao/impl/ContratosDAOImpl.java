@@ -69,7 +69,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Error al recuperar info:::: " + e);
+			logger.error("Error al recuperar info::: " + e);
 		}
 		return result;
 	}
@@ -124,7 +124,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Error al recuperar info:::: " + e);
+			logger.error("Error al recuperar info:: " + e);
 		}
 		return result;
 	}
@@ -135,7 +135,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
         Matcher mather = pattern.matcher(email.trim());
        
         if (mather.find()) {
-        logger.error("Error al recuperar info:::: " + mather);
+        logger.error("Error al recuperar info: " + mather);
         return true;
 	}
 		return false;
