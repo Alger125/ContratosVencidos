@@ -131,11 +131,10 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 		
 		Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)(\\.[A-Za-z]{2,})$");
         Matcher mather = pattern.matcher(email.trim());
-        if (mather.find()) {
-            return true;
-        } else {
-            return false;
+        if(mather.equals(true)) {
+        	return mather;
         }
+		return false;
         
 	}
 }
