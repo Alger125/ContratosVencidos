@@ -27,20 +27,19 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		File acciones = new File(resultado + File.separator + "concilia_acciones.txt");
 		try {
 			if (admitivos.createNewFile())
-				System.out.println("El fichero se ha creado correctamente"+admitivos);
+				logg.info("El fichero se ha creado correctamente" + admitivos);
 			else
-				System.out.println("No ha podido ser creado el fichero");
+				logg.info("Error al crear el archivo" + acciones);
 
 			if (dividendos.createNewFile())
-				System.out.println("El fichero se ha creado correctamente"+dividendos);
+				logg.info("El fichero se ha creado correctamente" + dividendos);
 			else
-				System.out.println("No ha podido ser creado el fichero");
+				logg.info("Error alerta" + acciones);
 
 			if (acciones.createNewFile())
-				System.out.println("El fichero se ha creado correctamente"+acciones);
+				logg.info("El fichero se ha creado correctamente" + acciones);
 			else
-				System.out.println("No ha podido ser creado el fichero");
-
+				logg.info("Error" + acciones);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
