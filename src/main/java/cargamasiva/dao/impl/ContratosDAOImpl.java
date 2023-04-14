@@ -77,6 +77,8 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 	public List<FideicomitenteDTO> getCtoFideicomitente() {
 		List<FideicomitenteDTO> result = new ArrayList<FideicomitenteDTO>();
 		String textoFormateado;
+		String constant = "AFB_E_MAIL";
+
 		try {
 			StringBuilder sql = new StringBuilder();
 			Map<String, Object> params = new HashMap<String, Object>();
@@ -113,8 +115,8 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 					ctoFideicomitente.setFechaVencimiento((java.sql.Date) query.get("FECHA_VENCIMIENTO"));
 					ctoFideicomitente.setCveTipoNegocio((String) query.get("CTO_CVE_TIPO_NEG"));
 
-					if (validarCorreo((String) query.get("AFB_E_MAIL"))) {
-						ctoFideicomitente.setCorreo((String) query.get("AFB_E_MAIL"));
+					if (validarCorreo((String) query.get(constant))) {
+						ctoFideicomitente.setCorreo((String) query.get(constant));
 						textoFormateado = String.format("%-300s", query.get("AFB_E_MAIL"));
 						ctoFideicomitente.setCorreo(textoFormateado);
 						result.add(ctoFideicomitente);
