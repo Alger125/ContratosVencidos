@@ -131,20 +131,6 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 		return Pattern.compile("^[_A-Za-z0-9-\\\\+]\"+\"[A-Za-z0-9-](\\\\.[A-Za-z]{2,})$").matcher(email).find();
 	}
 	
-	public int ContarEspacios(String ctoFideicomitente, int index)
-	{
-	    int cont = 0;
-
-	    if(index == ctoFideicomitente.length())
-	return cont;
-
-	if(texto.charAt(index) ==  ' ')
-	{
-	    cont++;
-	}
-	index++;
-	return cont + ContarEspacios(ctoFideicomitente, index);
-	}
 	    
 
 }
