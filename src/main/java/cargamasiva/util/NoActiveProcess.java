@@ -38,12 +38,12 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 
 	}
 
-	public static boolean eliminarFichero(File fichero) {
+	public static void eliminarFichero(File fichero) {
 		if (fichero.exists()) {
 			fichero.delete();
 			logg.debug("El archivo " + fichero.getName() + " fue eliminado.");
 		}
-		return false;
+		
 	}
 	
 
