@@ -23,7 +23,7 @@ import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
 @Service
 public class ContratosServiceImpl implements ContratosService {
 
-	private static Logger Log = Logger.getLogger(ContratosServiceImpl.class);
+	private static Logger Logg = Logger.getLogger(ContratosServiceImpl.class);
 
 	@Autowired
 	ContratosDAO contratosDAO;
@@ -59,7 +59,7 @@ public class ContratosServiceImpl implements ContratosService {
 			}
 			escribir.close();
 		} catch (ExcepcionAplicacion e) {
-			Log.info("Error al escribir el archivo");
+			Logg.info("Error al escribir el archivo");
 		} finally {
 			escribir.close();
 		}
