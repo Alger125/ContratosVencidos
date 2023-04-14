@@ -15,7 +15,7 @@ import com.bbva.arqspring.util.NoActivo;
 @Service
 public class NoActiveProcess extends BaseDAO implements NoActivo {
 
-	private static Logger Log = Logger.getLogger(App.class);
+	private static Logger logg = Logger.getLogger(App.class);
 
 	@Value("${rutas.carga.masiva.result}")
 	private String RUTARESULT;
@@ -33,7 +33,7 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 			dividendos.createNewFile();
 			acciones.createNewFile();
 		} catch (IOException e) {
-			Log.debug("Proceso no activo, error al ejecutar");
+			logg.debug("Proceso no activo, error al ejecutar");
 		}
 
 	}
@@ -41,7 +41,7 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 	public static boolean eliminarFichero(File fichero) {
 		if (fichero.exists()) {
 			fichero.delete();
-			Log.debug("El archivo " + fichero.getName() + " fue eliminado.");
+			logg.debug("El archivo " + fichero.getName() + " fue eliminado.");
 		}
 		return false;
 	}
