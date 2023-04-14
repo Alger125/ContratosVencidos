@@ -69,7 +69,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 				}
 			}
 		} catch (Exception e) {
-			logger.error("Error al recuperar info::: " + e);
+			logger.error("Error al recuperar info " + e);
 		}
 		return result;
 	}
