@@ -67,6 +67,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 						result.add(ctoFideicomisario);
 					}
 				}
+				
 			}
 		} catch (Exception e) {
 			logger.error("Error al recuperar info " + e);
