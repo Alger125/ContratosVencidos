@@ -133,9 +133,10 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
         Matcher mather = pattern.matcher(email.trim());
        
         if (mather.find()) {
-        return true;
-        }  {
-        return false;
-        }
+        logger.error("Error al recuperar info:::: " + mather);
 	}
+		return false;
+	
 }
+}
+

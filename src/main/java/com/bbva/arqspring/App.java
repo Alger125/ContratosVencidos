@@ -6,9 +6,10 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
-import com.bbva.arqspring.CargaMasiva.service.CatalogoContratosService;
-import com.bbva.arqspring.CargaMasiva.util.NoActiveProcess;
 import com.bbva.arqspring.util.Config;
+
+import cargamasiva.service.CatalogoContratosService;
+import cargamasiva.util.NoActiveProcess;
 
 /**
  * Hello world!
@@ -19,7 +20,7 @@ public class App {
 	private static Logger log = Logger.getLogger(App.class);
 	
 	public static void main(String[] args) {
-		LogJava.debug("INICIO");
+		log.debug("INICIO");
 		Config.setNumberProcess(207);
 		Config.setNoActivo(NoActiveProcess.class);
 		ApplicationContext c = Config.obtenerContexto();
