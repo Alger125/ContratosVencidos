@@ -18,13 +18,13 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 	private static Logger logg = Logger.getLogger(App.class);
 
 	@Value("${rutas.carga.masiva.result}")
-	private String RUTARESULT;
+	private String resultado;
 
 	public void exec() {
 
-		File admitivos = new File(RUTARESULT + File.separator + "concilia_admitivos.txt");
-		File dividendos = new File(RUTARESULT + File.separator + "concilia_dividendos.txt");
-		File acciones = new File(RUTARESULT + File.separator + "concilia_acciones.txt");
+		File admitivos = new File(resultado + File.separator + "concilia_admitivos.txt");
+		File dividendos = new File(resultado + File.separator + "concilia_dividendos.txt");
+		File acciones = new File(resultado + File.separator + "concilia_acciones.txt");
 		eliminarFichero(admitivos);
 		eliminarFichero(dividendos);
 		eliminarFichero(acciones);
