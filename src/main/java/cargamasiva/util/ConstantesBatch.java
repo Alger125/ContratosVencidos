@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.util;
+package cargamasiva.util;
 
 
 public class ConstantesBatch {

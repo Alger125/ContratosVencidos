@@ -1,4 +1,4 @@
-package com.bbva.arqspring.CargaMasiva.util;
+package cargamasiva.util;
 
 import java.io.File;
 import java.io.IOException;
