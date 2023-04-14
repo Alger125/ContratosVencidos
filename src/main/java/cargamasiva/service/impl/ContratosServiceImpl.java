@@ -18,13 +18,12 @@ import cargamasiva.dto.FideicomisarioDTO;
 import cargamasiva.dto.FideicomitenteDTO;
 import cargamasiva.service.ContratosService;
 
-import com.bbva.arqspring.App;
 import com.bbva.jee.arq.spring.core.gce.ExcepcionAplicacion;
 
 @Service
 public class ContratosServiceImpl implements ContratosService {
 
-	private static Logger LogJava = Logger.getLogger(ContratosServiceImpl.class);
+	private static Logger Logs = Logger.getLogger(ContratosServiceImpl.class);
 
 	@Autowired
 	ContratosDAO contratosDAO;
@@ -60,7 +59,7 @@ public class ContratosServiceImpl implements ContratosService {
 			}
 			escribir.close();
 		} catch (ExcepcionAplicacion e) {
-			LogJava.info("Error al escribir el archivo");
+			Logs.info("Error al escribir el archivo");
 		} finally {
 			escribir.close();
 		}
