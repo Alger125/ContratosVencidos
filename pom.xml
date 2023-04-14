@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.bbva.mfid.fidcven.batch</groupId>
-  <artifactId>fidcven</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-  <name>fidcven</name>
-  
-  <properties>
-   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bbva.mfid.fidcven.batch</groupId>
+	<artifactId>fidcven</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>fidcven</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
-  </properties>
-
-  <dependencies>
-    
-    		<!-- dependencies for pu testing -->
+	</properties>
+	<dependencies>
+		<!-- dependencies for pu testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -45,26 +39,26 @@
 			<scope>test</scope>
 			<version>0.8.6</version>
 		</dependency>
-
 		<!-- ADD necesary dependencies for funcionality -->
-
-        <dependency>
-            <groupId>Fiduciario.util</groupId>
-            <artifactId>fiduBase</artifactId>
-            <version>01</version>
-        </dependency>
-        <dependency>
-            <groupId>Fiduciario.util</groupId>
-            <artifactId>archivos</artifactId>
-            <version>01</version>
-        </dependency>
-
-    
-  </dependencies>
-
-  <build>
+		<dependency>
+			<groupId>Fiduciario.util</groupId>
+			<artifactId>fiduBase</artifactId>
+			<version>01</version>
+		</dependency>
+		<dependency>
+			<groupId>Fiduciario.util</groupId>
+			<artifactId>archivos</artifactId>
+			<version>01</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+	</dependencies>
+	<build>
 		<plugins>
-    
 			<!-- plugins for pu testing reports -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -115,44 +109,40 @@
 				</dependencies>
 			</plugin>
 			<!-- ENDS plugins for pu testing reports -->
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                            <overWriteReleases>false</overWriteReleases>
-                            <overWriteSnapshots>false</overWriteSnapshots>
-                            <overWriteIfNewer>true</overWriteIfNewer>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>/fiduciario/jars/batch/poleadores/libs/</classpathPrefix>
-                            <mainClass>com.bbva.arqspring.App</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>/fiduciario/jars/batch/poleadores/libs/</classpathPrefix>
+							<mainClass>com.bbva.arqspring.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 	<distributionManagement>
 		<repository>
 			<id>repositories-spring-vdc</id>
@@ -166,5 +156,4 @@
 			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
-
 </project>
