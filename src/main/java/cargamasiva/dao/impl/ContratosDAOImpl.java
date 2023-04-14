@@ -59,8 +59,8 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 					FideicomisarioDTO ctoFideicomisario = new FideicomisarioDTO();
 					ctoFideicomisario.setFechaVencimiento((java.sql.Date) query.get("FECHA_VENCIMIENTO"));
 					ctoFideicomisario.setCveTipoNegocio((String) query.get("CTO_CVE_TIPO_NEG"));
-					if (validarCorreo((String) query.get("BEN_E_MAIL"))) {
-						ctoFideicomisario.setCorreo((String) query.get("BEN_E_MAIL"));
+					if (validarCorreo((String) query.get(constants))) {
+						ctoFideicomisario.setCorreo((String) query.get(constants));
 						formateado = String.format("%-300s", query.get("BEN_E_MAIL"));
 						ctoFideicomisario.setCorreo(formateado);
 						result.add(ctoFideicomisario);
