@@ -15,7 +15,7 @@ import com.bbva.arqspring.util.NoActivo;
 @Service
 public class NoActiveProcess extends BaseDAO implements NoActivo {
 
-	private static Logger logg = Logger.getLogger(App.class);
+	private static Logger logg = Logger.getLogger(NoActiveProcess.class);
 
 	@Value("${rutas.carga.masiva.result}")
 	private String resultado;
