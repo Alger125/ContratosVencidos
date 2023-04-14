@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -22,7 +23,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 	public List<FideicomisarioDTO> getCtoFideicomisario() {
 		List<FideicomisarioDTO> result = new ArrayList<FideicomisarioDTO>();
 		String formateado;
-		String constants ="BEN_E_MAIL";
+		String constants = "BEN_E_MAIL";
 
 		try {
 			StringBuilder sql = new StringBuilder();
@@ -51,7 +52,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 
 			logger.info(ConstantesBatch.QUERY + sql);
 			logger.info(ConstantesBatch.PARAM + params.toString());
-			
+
 			List<Map<String, Object>> queryMap = jdbcTemplate.queryForList(sql.toString(),
 					new MapSqlParameterSource(params));
 			if (null != queryMap && !queryMap.isEmpty()) {
@@ -127,10 +128,15 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 	}
 
 	public boolean validarCorreo(String email) {
-
-		return Pattern.compile("^[_A-Za-z0-9-\\\\+]\"+\"[A-Za-z0-9-](\\\\.[A-Za-z]{2,})$").matcher(email).find();
+		
+		Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)@"+"[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(email.trim());
+        if (mather.find()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+        
 	}
-	
-	    
-
 }
