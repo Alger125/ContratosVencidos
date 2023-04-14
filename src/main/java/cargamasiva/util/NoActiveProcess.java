@@ -32,12 +32,12 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 				logg.info("Error al crear el archivo" + acciones);
 
 			if (dividendos.createNewFile())
-				logg.info("El fichero se ha creado correctamente" + dividendos);
+				logg.info("El fichero se ha construido correctamente" + dividendos);
 			else
 				logg.info("Error alerta" + acciones);
 
 			if (acciones.createNewFile())
-				logg.info("El fichero se ha creado correctamente" + acciones);
+				logg.info("El fichero se ha establecido correctamente" + acciones);
 			else
 				logg.info("Error" + acciones);
 		} catch (IOException ioe) {
