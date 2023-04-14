@@ -43,8 +43,9 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 
 		if (acciones.exists()) {
 			acciones.delete();
-			logg.debug("El archivo " + dividendos.getName() + " fue eliminado.");
+			logg.debug("El archivo " + acciones.getName() + " fue eliminado.");
 		}
+		logg.debug("El archivo " + acciones.getName() + " fue eliminado.");
 	}
 
 }
