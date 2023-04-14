@@ -25,9 +25,6 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		File admitivos = new File(resultado + File.separator + "concilia_admitivos.txt");
 		File dividendos = new File(resultado + File.separator + "concilia_dividendos.txt");
 		File acciones = new File(resultado + File.separator + "concilia_acciones.txt");
-		eliminarFichero(admitivos);
-		eliminarFichero(dividendos);
-		eliminarFichero(acciones);
 		try {
 			admitivos.createNewFile();
 			dividendos.createNewFile();
@@ -35,16 +32,19 @@ public class NoActiveProcess extends BaseDAO implements NoActivo {
 		} catch (IOException e) {
 			logg.debug("Proceso no activo, error al ejecutar");
 		}
-
-	}
-
-	public static void eliminarFichero(File fichero) {
-		if (fichero.exists()) {
-			fichero.delete();
-			logg.debug("El archivo " + fichero.getName() + " fue eliminado.");
+		if (admitivos.exists()) {
+			admitivos.delete();
+			logg.debug("El archivo " + admitivos.getName() + " fue eliminado.");
 		}
-		
+		if (dividendos.exists()) {
+			dividendos.delete();
+			logg.debug("El archivo " + dividendos.getName() + " fue eliminado.");
+		}
+
+		if (acciones.exists()) {
+			acciones.delete();
+			logg.debug("El archivo " + dividendos.getName() + " fue eliminado.");
+		}
 	}
-	
 
 }
