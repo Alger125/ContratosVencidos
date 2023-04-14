@@ -134,6 +134,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
        
         if (mather.find() == true) {
         logger.error("Error al recuperar info:::: " + mather);
+        return true;
 	}
 		return false;
 	
