@@ -42,8 +42,8 @@ public class App {
 		} catch (Exception e) {
 			String messageOutPut = "Error al ejecutar proceso";
 			log.info("Error: " + messageOutPut);
+			log.info("Hola xd lol");
 			System.exit(1);
 		}
-jkkjlkjlklkjl
 	}
 }
