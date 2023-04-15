@@ -122,7 +122,7 @@ public class ContratosDAOImpl extends BaseDAO implements ContratosDAO {
 						ctoFideicomitente.setCorreo(textoFormateado);
 						result.add(ctoFideicomitente);
 					}
-					jhkjkj
+					
 				}
 			}
 		} catch (Exception e) {
